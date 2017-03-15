@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:27:39 +0100] "GET /myform.html HTTP/1.1" 200 295 http-bio-8080-exec-3 126
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:27:39 +0100] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-4 3
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:27:39 +0100] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-6 1
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:31:18 +0100] "GET /myform.html HTTP/1.1" 304 - http-bio-8080-exec-8 23
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:31:36 +0100] "POST /UserInfo HTTP/1.1" 404 967 http-bio-8080-exec-9 11
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:32:45 +0100] "GET /myform.html HTTP/1.1" 304 - http-bio-8080-exec-1 21
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:33:15 +0100] "POST /UserInfo HTTP/1.1" 404 967 http-bio-8080-exec-1 12
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:35:22 +0100] "GET /myform.html HTTP/1.1" 304 - http-bio-8080-exec-4 24
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:35:31 +0100] "POST /UserInfo HTTP/1.1" 404 967 http-bio-8080-exec-4 6
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:38:41 +0100] "GET /myform.html HTTP/1.1" 200 309 http-bio-8080-exec-1 47
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:11:38:49 +0100] "POST /UserInfo HTTP/1.1" 200 131 http-bio-8080-exec-2 7
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:12:07:11 +0100] "GET /myform.html HTTP/1.1" 304 - http-bio-8080-exec-1 53
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:12:07:22 +0100] "POST /UserInfo HTTP/1.1" 500 3483 http-bio-8080-exec-2 1083
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:12:08:58 +0100] "POST /UserInfo HTTP/1.1" 500 3483 http-bio-8080-exec-1 878
+0:0:0:0:0:0:0:1 - - [24/Jan/2017:12:13:45 +0100] "POST /UserInfo HTTP/1.1" 200 131 http-bio-8080-exec-1 1831
