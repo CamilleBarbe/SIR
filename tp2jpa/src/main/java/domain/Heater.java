@@ -4,35 +4,16 @@ import javax.persistence.*;
 
 
 @Entity
-public class Heater {
-	
-	private long id;
-	private Home home;
-	
-	public Heater(){}
-	
-	public Heater(Home home) {
+public class Heater extends IntelligentHeater {
+
+	public Heater() {
 		super();
-		this.home = home;
+		// TODO Auto-generated constructor stub
 	}
 
-
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	public long getId() {
-		return id;
-	}
-	
-	@ManyToOne
-	public Home getHome(){
-		return home;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public void setHome(Home home) {
-		this.home = home;
+	public Heater(Home home) {
+		super(home);
+		// TODO Auto-generated constructor stub
 	}
 	
 	
