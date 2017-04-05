@@ -22,7 +22,7 @@ import domain.Person;
 import domain.Singleton;
 import jpa.JpaTest;
 
-@WebServlet(name = "userinfo", urlPatterns = { "/UserInfo" })
+@WebServlet(name = "userinfo", urlPatterns = {"/UserInfo"})
 public class UserInfo extends HttpServlet {
 
 	private Collection<Person> person;
