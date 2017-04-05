@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+</head>
+
+<body ng-app="pokedex">
+
+    <div class="container" ng-controller="controller">
+        <h1>Pokésir</h1>
+
+        <!-- Search Q1 Q2 -->
+        <label name="idPokemon">ID Pokémon</label><input type="text" ng-model="idPokemon" name="idPokemon" />
+        <label name="nomPokemon">Nom Pokemon</label><input type="text" ng-model="nomPokemon" name="nomPokemon" />
+        <!-- <div>{{ idPokemon }} {{ nomPokemon }}</div> -->
+
+        <!-- Pokémon information -->
+        <div>
+            <SELECT id="Pokemon" size="1">
+                <OPTION ng-repeat="(id,name) in Pokemon track by $index | filter:nomPokemon | filter:idPokemon" ng-if="name"> {{id}} {{name}}</OPTION>
+            </SELECT>
+            <button type="submit" class="btn btn-primary" ng-click="submit()">Go</button>
+            <button type="reset" class="btn btn-primary" ng-click="reset()">Reset</button>
+            <button type="log" class="btn btn-primary"ng-click="$log.log(nomPokemon)">Log</button>
+
+            <div>ID Pokémon: <strong>{{idPokemon}}</strong></div>
+            <div>Nom Pokemon: <strong>{{nomPokemon}}</strong></div>
+
+        </div>
+
+    </div>
+
+    <!-- Dependencies -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-resource.min.js"></script>
+
+    <!-- Pokedex app -->
+    <script src="js/pokedex.js"></script>
+
+
+</body>
+
+</html>
