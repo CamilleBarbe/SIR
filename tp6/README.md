@@ -12,7 +12,7 @@ Plusieurs étapes :
 - **Recherche du pokemon par son nom ou son id grâce aux deux premiers champs texte :**
 On utilise la directive "ng-model". Les directives sont utilisées lorsque l'on souhaite modifier ou transformer le DOM (Document Object Model). Les plus connues fournies par Angular sont : ngController, ngRepeat et ngModel. ngModel est une directive qui permet de lier la valeur d'une balise HTML à une variable du modèle.
 
-- **Recherche dans une liste : **
+- **Recherche dans une liste :**
 On utilise ici la directive ng-controller pour attacher le controleur à la vue. Dans un premier temps, la recherche dans les champs id et nom du Pokemon permettent de présélectionner un pokemon dans la liste.
 
 3 boutons sont présents : "Go" pour lancer la recherche du pokemon et donc afficher ses informations (via le 2ème controlleur), "Reset" pour réinitialiser les champs, "Log" pour afficher dans la console le pokemon sélectionné. Chaque bouton renvoie à une fonction du controlleur.
@@ -50,7 +50,7 @@ pokeApp.controller('controllerAffichage', ['$scope', 'Service', 'pokesirApi', fu
     });
 }]);*
 
-- **Création d'une directive : **
+- **Création d'une directive :**
 *pokeApp.directive('pokedex', function(){
 	return {
 		templateUrl: 'pokedex.html'
