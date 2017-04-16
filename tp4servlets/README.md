@@ -1,7 +1,9 @@
-#Premier rendu avec backend en JAva (TP JPA + JaxRS + Servlet)
+Premier rendu avec backend en JAva (TP JPA + JaxRS + Servlet)
+==================
 *Camille BARBE - Safiah SEEDAT*
 
-##Plusieurs technologies utilisées :
+Plusieurs technologies utilisées :
+------------------
 - JPA (Java Persistence Application) : 
 C'est un fournisseur de persistance c'est à dire une spécification qui définit un ensemble de règles permettant la gestion de la correspondance entre des objets Java et une base de données (ORM : Object-Relational Mapping).
 JPA est donc une API, c’est-à-dire une description d'un standard à respecter. Hibernate est un framework ORM qui permet d'implémenter JPA.
@@ -12,7 +14,8 @@ Ce sont des classes JAVA qui permettent de recevoir et de traiter des requêtes 
 - JaxRS : 
 API qui propose notamment des annotations pour lier une URI et des verbes HTTP à des méthodes d'une classe java. Jersey est un framework qui permet de développer des services web selon l'architecture REST et suivant ces spécifications.
 
-##JPA :
+JPA :
+------------------
 On met de préférence les annotations sur les getters et les setters.
 @Entity permet de déclarer la classe en tant qu'entité.
 Pour les collections, on utilise l'annotation @ManyToMany.
@@ -24,7 +27,8 @@ Transient permet de déclarer les clés étrangères.
 
 La classe de service JpaTest permet de remplir la base mais aussi de faire des requêtes sur la base de données.
 
-##Servlets :
+Servlets :
+------------------
 La requête HTTP part du client et arrive sur le serveur.
 Le serveur HTTP écoute les requêtes HTTP sur le port 80.
 
@@ -42,5 +46,6 @@ Une classe Java permet ensuite de récupérer ses infos pour les envoyer en base
 A appeler pour afficher le formulaire :
 http://localhost:8080/myform.html
 
-##JaxRS :
+JaxRS :
+------------------
 Permet de réaliser l'API REST facilement grâce à des annotations : @GET, @Path...
