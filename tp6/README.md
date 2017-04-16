@@ -1,4 +1,5 @@
-#Deuxième rendu avec le TP6 angularJS pokemon api ou swapi :
+Deuxième rendu avec le TP6 angularJS pokemon api ou swapi :
+==================
 *Camille BARBE - Safiah SEEDAT*
 
 ##2 fichiers importants :
