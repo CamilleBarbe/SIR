@@ -7,13 +7,29 @@ pokeApp.config(['$resourceProvider', function ($resourceProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
+pokeApp.directive('pokedex', function() {});
+
+//1er service dédié à l'API
 pokeApp.factory('pokesirApi', ['$resource', 'POKEAPI', function ($resource, POKEAPI) {
     return $resource(POKEAPI + "/api/v1/pokedex/");
 }]);
 
-//pokeApp
-pokeApp.controller('controller', ['$scope', '$log', 'pokesirApi', function ($scope, $log, pokesirApi) {
+//2ème service permettant l'échange d'informations
+pokeApp.factory('Service', function(){
+    this.idPokemon = 0;
+    this.nomPokemon = 0;
+    return this.idPokemon, this.nomPokemon;
+});
+
+//controller 1 pour la recherche
+pokeApp.controller('controller', ['$scope', 'Service', '$log', 'pokesirApi', function ($scope, Service, $log, pokesirApi) {
+
+    $scope.idPokemon = "";
+    $scope.nomPokemon = "";
+
+
     $scope.$log = $log;
+
     $scope.Pokemon = [
         /*{ nomPokemon: 'Pikachu', idPokemon: 1 },
         { nomPokemon: 'Tortank', idPokemon: 2 },
@@ -24,7 +40,7 @@ pokeApp.controller('controller', ['$scope', '$log', 'pokesirApi', function ($sco
 
     var PokemonTemp = [];
 
-    var Id = pokesirApi.get({}, function () {
+    var Id = pokesirApi.get({/* id: $scope.idPokemon */ }, function () {
         $scope.Pokemon = Id;
 
         Id = Id["objects"]["0"]["pokemon"];
@@ -45,6 +61,7 @@ pokeApp.controller('controller', ['$scope', '$log', 'pokesirApi', function ($sco
 
         $scope.idPokemon = slt[0];
         $scope.nomPokemon = slt[1];
+        console.log($scope.idPokemon);
 
 
     };
@@ -56,6 +73,20 @@ pokeApp.controller('controller', ['$scope', '$log', 'pokesirApi', function ($sco
 
 }]);
 
+//controller 2 pour l'affichage
+pokeApp.controller('controllerAffichage', ['$scope', 'Service', 'pokesirApi', function ($scope, Service, pokesirApi) {
+
+
+    //Déclenche opérations lorsque valeurs de propriétés changent
+    //1er param : propriété observée
+    //2ème param : fonction appelée quand 1er param change
+    $scope.$watch("$scope.idPokemon", function(newValue, oldValue){
+        if(newValue) { 
+            Service.idPokemon = newValue;
+            console.log(Service.idPokemon);
+        }
+    });
+}]);
 
 
 

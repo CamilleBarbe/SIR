@@ -17,23 +17,32 @@
         <!-- Search Q1 Q2 -->
         <label name="idPokemon">ID Pokémon</label><input type="text" ng-model="idPokemon" name="idPokemon" />
         <label name="nomPokemon">Nom Pokemon</label><input type="text" ng-model="nomPokemon" name="nomPokemon" />
-        <!-- <div>{{ idPokemon }} {{ nomPokemon }}</div> -->
+        <!-- <div>{{idPokemon}}{{nomPokemon}}</div> -->
 
         <!-- Pokémon information -->
         <div>
             <SELECT id="Pokemon" size="1">
-                <OPTION ng-repeat="(id,name) in Pokemon track by $index | filter:nomPokemon | filter:idPokemon" ng-if="name"> {{id}} {{name}}</OPTION>
+                <OPTION ng-repeat="(id,name) in Pokemon | filter:idPokemon | filter:nomPokemon"> {{id}} {{name}}</OPTION>
             </SELECT>
             <button type="submit" class="btn btn-primary" ng-click="submit()">Go</button>
             <button type="reset" class="btn btn-primary" ng-click="reset()">Reset</button>
-            <button type="log" class="btn btn-primary"ng-click="$log.log(nomPokemon)">Log</button>
+            <button type="log" class="btn btn-primary" ng-click="$log.log(nomPokemon)">Log</button>
 
-            <div>ID Pokémon: <strong>{{idPokemon}}</strong></div>
-            <div>Nom Pokemon: <strong>{{nomPokemon}}</strong></div>
+        </div>
+
+            <!-- Affichage des informations du pokemon -->
+        <div class="container" ng-controller="controllerAffichage">
+            <h1> Informations du Pokemon sélectionné :</h1>
+                <div>ID Pokémon: <strong>{{idPokemon}}</strong></div>
+                <div>Nom Pokemon: <strong>{{nomPokemon}}</strong></div>
 
         </div>
 
     </div>
+
+
+
+
 
     <!-- Dependencies -->
     <script src="js/jquery.min.js"></script>
