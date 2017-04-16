@@ -7,7 +7,11 @@ pokeApp.config(['$resourceProvider', function ($resourceProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
 
-pokeApp.directive('pokedex', function() {});
+pokeApp.directive('pokedex', function () {
+    return {
+        templateUrl: 'pokedex.html'
+    };
+});
 
 //1er service dédié à l'API
 pokeApp.factory('pokesirApi', ['$resource', 'POKEAPI', function ($resource, POKEAPI) {
@@ -15,7 +19,7 @@ pokeApp.factory('pokesirApi', ['$resource', 'POKEAPI', function ($resource, POKE
 }]);
 
 //2ème service permettant l'échange d'informations
-pokeApp.factory('Service', function(){
+pokeApp.factory('Service', function () {
     this.idPokemon = 0;
     this.nomPokemon = 0;
     return this.idPokemon, this.nomPokemon;
@@ -48,7 +52,7 @@ pokeApp.controller('controller', ['$scope', 'Service', '$log', 'pokesirApi', fun
         var h = 0;
         for (var i in Id) {
             var id = Id[i]["resource_uri"].split("/");
-            id = id[id.length-2]; 
+            id = id[id.length - 2];
             PokemonTemp[id] = Id[i]["name"];
         }
         $scope.Pokemon = PokemonTemp;
@@ -80,8 +84,8 @@ pokeApp.controller('controllerAffichage', ['$scope', 'Service', 'pokesirApi', fu
     //Déclenche opérations lorsque valeurs de propriétés changent
     //1er param : propriété observée
     //2ème param : fonction appelée quand 1er param change
-    $scope.$watch("$scope.idPokemon", function(newValue, oldValue){
-        if(newValue) { 
+    $scope.$watch("$scope.idPokemon", function (newValue, oldValue) {
+        if (newValue) {
             Service.idPokemon = newValue;
             console.log(Service.idPokemon);
         }
